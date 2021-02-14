@@ -8,16 +8,22 @@
 
 # 如何使用
 下载上面所有代码，直接上传到服务器，访问index.html即可
+
 # 现有以下API
 
-`百度`
+【引用和直链演示】
 
+`百度` ![bd.img](https://bit-images.bj.bcebos.com/bit-new/file/20210214/gpmd.jpg) https://bit-images.bj.bcebos.com/bit-new/file/20210214/gpmd.jpg
 
-`小米`
-`今日头条`
-`悟空问答`
-`新浪`
-`腾讯`
+`小米` ![xm.img](https://img06.mifile.cn/v1/MI_542ED8B1722DC/9defa665ca8d20b85d17af56dd4a0ae2.jpg) https://img06.mifile.cn/v1/MI_542ED8B1722DC/9defa665ca8d20b85d17af56dd4a0ae2.jpg
+
+`今日头条` ![toutiao.img](https://p.pstatp.com/origin/13810000205fe2755ecdc) https://p.pstatp.com/origin/13810000205fe2755ecdc
+
+`悟空问答` ![wk.img](https://p1.pstatp.com/large/2b28f00041098fe61491b) https://p1.pstatp.com/large/2b28f00041098fe61491b
+
+`新浪` ![xl.img](https://pic.iask.cn/fimg/47913635046.jpg) https://pic.iask.cn/fimg/47913635046.jpg
+
+`腾讯` ![tx.img](https://inews.gtimg.com/newsapp_ls/0/13168762538/0) https://inews.gtimg.com/newsapp_ls/0/13168762538/0
 
 
 # 原有以下API
