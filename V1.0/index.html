@@ -19,6 +19,9 @@
   <div class="card">
     <!-- API选择 -->
     <div class="card-header">
+      <button type="button" class="select_background btn btn-outline-secondary" onclick="">
+        <input type="radio" name="api_select" id="c1" checked>葫芦侠
+      </button>
       <button type="button" class="btn btn-outline-secondary" onclick="">
         <input type="radio" name="api_select" id="c2">百度
       </button>
@@ -36,6 +39,30 @@
       </button>
       <button type="button" class="btn btn-outline-secondary" onclick="">
         <input type="radio" name="api_select" id="c7">腾讯
+      </button>
+      <button type="button" class="btn btn-outline-secondary" onclick="">
+        <input type="radio" name="api_select" id="c8">哔哩哔哩
+      </button>
+      <button type="button" class="btn btn-outline-secondary" onclick="">
+        <input type="radio" name="api_select" id="c9">中关村
+      </button>
+      <button type="button" class="btn btn-outline-secondary" onclick="">
+        <input type="radio" name="api_select" id="c10">网易
+      </button>
+      <button type="button" class="btn btn-outline-secondary" onclick="">
+        <input type="radio" name="api_select" id="c11">阿里
+      </button>
+      <button type="button" class="btn btn-outline-secondary" onclick="">
+        <input type="radio" name="api_select" id="c12">奇虎360
+      </button>
+      <button type="button" class="btn btn-outline-secondary" onclick="">
+        <input type="radio" name="api_select" id="c13">稿定
+      </button>
+      <button type="button" class="btn btn-outline-secondary" onclick="">
+        <input type="radio" name="api_select" id="c14">58同城
+      </button>
+      <button type="button" class="btn btn-outline-secondary" onclick="">
+        <input type="radio" name="api_select" id="c15">搜狐
       </button>
     </div>
 
@@ -71,8 +98,13 @@
 <!-- JS -->
 <script type="text/javascript">
 //默认选择API1
-var api = 'baidu.php';
+var api = 'huluxia.php';
 
+//API1
+$('#c1').click(function(){
+    api = 'huluxia.php';
+    console.log(api);
+});
 //API2
 $('#c2').click(function(){
     api = 'baidu.php';
@@ -101,6 +133,46 @@ $('#c6').click(function(){
 //API7
 $('#c7').click(function(){
     api = 'tencent.php';
+    console.log(api);
+});
+//API8
+$('#c8').click(function(){
+    api = 'bilibili.php';
+    console.log(api);
+});
+//API9
+$('#c9').click(function(){
+    api = 'zol.php';
+    console.log(api);
+});
+//API10
+$('#c10').click(function(){
+    api = 'wangyi.php';
+    console.log(api);
+});
+//API11
+$('#c11').click(function(){
+    api = 'ali.php';
+    console.log(api);
+});
+//API12
+$('#c12').click(function(){
+    api = 'qihoo.php';
+    console.log(api);
+});
+//API13
+$('#c13').click(function(){
+    api = 'gaoding.php';
+    console.log(api);
+});
+//API14
+$('#c14').click(function(){
+    api = 'wuba.php';
+    console.log(api);
+});
+//API15
+$('#c15').click(function(){
+    api = 'souhu.php';
     console.log(api);
 });
 
@@ -172,9 +244,4 @@ window.onload = function () {
 }
 </script>
 </body>
-<footer style="text-align:center;">
-    <p><a href="https://www.blueskyxn.com/">SKYの博客-苍穹の下</a>丨<a href="https://000714.xyz">SKYの主页</a>丨<a href="https://github.com/blueSkyXN">SKYのGithub</a> </p>
-        <h4>如果您发现有人滥用/违法违规使用本站服务或有其它诉求/意见/反馈</h4>
-        <h4>请联系我：Mail:BlueSky@000714.xyz</h4>
-</footer>
 </html>
