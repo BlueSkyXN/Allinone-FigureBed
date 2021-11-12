@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>图片一览</title>
+        <meta charset="utf-8" />
+        <meta name="referrer" content="no-referrer" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta itemprop="image" content="http://https://wx3.sinaimg.cn/large/006E2C7lly1gnyodqhrzsj30j60oo44g.jpg" />
+        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net/" />
+        <link rel="preload" href="https://cdn.jsdelivr.net/gh/kylelogue/mustard-ui/dist/css/mustard-ui.min.css" as="style" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kylelogue/mustard-ui/dist/css/mustard-ui.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.scroll-down, .get-started').on('click', function (e) {
+                    e.preventDefault();
+                    $('html, body').animate(
+                        {
+                            scrollTop: $('section:first-of-type').offset().top,
+                        },
+                        300,
+                    );
+                });
+            });
+        </script>
+        <style>
+            header {
+                background: #a0e5e4;
+            }
+
+            .get-started {
+                background: #43ccc8;
+                border: 3px solid #50d0cc;
+            }
+
+            * {
+                word-break: break-all;
+            }
+
+            .panel img {
+                width: 100%;
+            }
+
+            .right {
+                float: right;
+            }
+            h1.title {
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1 class="title">图片一览</h1>
+            <h2 class="subtitle"></h2>
+            <button class="get-started button button-primary button-large">
+                详情
+            </button>
+            <div><p class="disclaimer">其他：<a href="./?p=1">图1</a> | <a href="./?p=24">图2</a> | <a href="/">随机图API</a></p>
+</div>
+            <a class="scroll-down" href="#"></a>
+        </header>
+        <section>
+            <h1 class="title"></h1>
+            <div class="row" id="output">
+                <strong>Error!</strong>
+                &nbsp;&nbsp;
+                <i>No images can be shown.</i>
+            </div>
+        </section>
+        <footer>
+            <p class="copyright align-center">
+                Made by
+                <a href="https://BTU.PP.UA/">BTU.PP.UA</a>
+            </p>
+        </footer>
+
+        <script>
+        
+function getUrlParam(name){
+    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r!=null) return unescape(r[2]); return null;
+}
+if(typeof getUrlParam('p') === 'undefined'|| getUrlParam('p') === null){var p = '1';}else{var p = getUrlParam('p');}
+            $.get(p, function (data) {
+                let html = '';
+                document.getElementById('output').innerHTML = '';
+                var arrDate = data.split(/\r\n|\r|\n/);
+                var length = arrDate.length;
+                var arrText = arrDate.filter(e =>  e.indexOf('http') == -1);
+                if(typeof arrText[0] === 'undefined'||arrText[0] === null){var title = '图片一览';}else{var title =arrText[0];}
+                document.getElementsByTagName("title")[0].innerText = p+' - '+title;
+                document.getElementsByTagName("h1")[1].innerText = p+' - '+title;
+                document.getElementsByTagName("h2")[0].innerText = p+' - '+title;
+                arrDate.reverse()
+                    .filter(e => e.includes('http') && e.length>10) 
+                    .forEach((item, i) => {
+                        var index = length-i
+                        html += `
+        <div class="col col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="panel">
+          <div class="panel-head">
+            <p>${title}(${index})</p>
+          </div>
+          <img class="lozad" data-src="${item}" alt="${index}" referrerpolicy="no-referrer" />
+          <div class="panel-footer">
+            <button onclick="window.open('${item}')" class="button-primary right">查看图片</button>
+          </div>
+        </div>
+      </div>`;
+                    });
+                document.getElementById('output').innerHTML = html;
+                const observer = lozad();
+                observer.observe();
+            });
+        </script>
+        <!--</body>-->
+    </body>
+</html>

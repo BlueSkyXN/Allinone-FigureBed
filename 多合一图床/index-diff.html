@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang='zh-cn'>
+<head>
+	<meta charset='UTF-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<title>多合一图床上传 - Cdn图床|百度图床|阿里图床|京东图床|搜狗图床|搜狐图床|QQ图床|58图床|头条图床|网易图床|360图床|葫芦侠图床-小高教学网www.12580sky.com</title>
+	<meta name="keywords" content="多合一图床,Cdn图床,百度图床,阿里图床,京东图床,搜狗图床,搜狐图床,QQ图床,XKX图床,58图床,头条图床,网易图床,360图床,葫芦侠图床" />
+	<link rel='stylesheet' href='https://cdn.bootcss.com/normalize/5.0.0/normalize.min.css'>
+	<script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.min.js"></script>
+	<link rel="shortcut icon" href="https://s.pc.qq.com/tousu/img/20210303/3307992_1614767716.jpg" />
+	<link rel="apple-touch-icon" href="https://s.pc.qq.com/tousu/img/20210303/3307992_1614767716.jpg">
+	<style>
+	html,body {height: 100%;margin: 0;padding: 0;line-height:0.8;}body {font-family: 'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;align-items: center;display: flex;}a{text-decoration:none;}#container {max-width: 360px;flex-basis: 100%;margin: 0 auto 50px;background: #FFF;border-radius: 10px;box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);-webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);overflow: hidden;}#container #hero-img {width: 100%;height: 110px;background: #007bff;}#container #profile-img {width: 120px;height: 120px;margin: -60px auto 0 auto;}#container #profile-img img {width: 100%;background: #FFF;border-radius: 50%;}#container #content {text-align: center;width: 350px;margin: 0 auto;padding: 0 0 50px 0;}#container #content h1 {font-size: 29px;font-weight: 500;margin: 30px 0 0 0;}#container #content p {font-size: 18px;font-weight: 400;line-height: 1.4;color: #666;margin: 15px 0 40px 0;}#container #content a {color: #CCC;font-size: 14px;margin: 0 3px;transition: color .3s ease-in-out;-webkit-transition: color .3s ease-in-out;line-height: 30px;}#container #content a:hover {color: #007bff;}.btn{background: none repeat scroll 0 0 #1BA1E2; border: 0 none; border-radius: 2px; color: #FFFFFF !important; cursor: pointer; font-family: "Open Sans","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",Arial,Verdana,Tahoma,sans-serif; font-size: 14px;  padding: 6px 10%;}.btn:hover,.yanshibtn:hover{background: none repeat scroll 0 0 #9B59B6; border: 0 none; border-radius: 2px; color: #FFFFFF!important; cursor: pointer; font-family: "Open Sans","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",Arial,Verdana,Tahoma,sans-serif; font-size: 14px; padding: 8px 10%;}form div {width: 100px;display: inline-grid;padding: 5px 0;height: 40px;}
+	.imgType{display: none;}
+	#images img{width: 100%}
+	#imgurl input{width: 100%;margin:5px 0;}
+	#imgurl,#progress{display: none;}
+	@-webkit-keyframes rotation{
+		from {-webkit-transform: rotate(0deg);}
+		to {-webkit-transform: rotate(360deg);}}
+	.Rotation{
+		-webkit-transform: rotate(360deg);
+		animation: rotation 3s linear infinite;
+		-moz-animation: rotation 3s linear infinite;
+		-webkit-animation: rotation 3s linear infinite;
+		-o-animation: rotation 3s linear infinite;}
+	.img{border-radius: 250px;}
+</style>
+<script data-ad-client="ca-pub-2216966439537945" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?47096df5fe81654d11927a045faab501";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s)})();</script>
+</head>
+<body>
+	<div id='container'>
+		<div id='hero-img'>
+		</div>
+		<div id='profile-img'>
+			<img rel='nofollow' src='https://s.pc.qq.com/tousu/img/20210303/3307992_1614767716.jpg' id="imgLoading" class="Rotation img" title="显示与隐藏"/>
+		</div>
+		<div id='content'>
+			<h2>多合一图床上传</h2>
+			<div id="progress"><progress max="100" value="0" id="pg"></progress></div>
+			<p class="imgType" id="imgType"></p>
+			<form id="form1">
+				<div><a href='javascript:void(0)' id="baiduImg" onclick="update('jd')" class="btn btn-default" rel='nofollow'>京东图床</a></div>
+				<div><a href='javascript:void(0)' id="SinaImg" onclick="update('ali')" class="btn btn-default" rel='nofollow'>阿里图床</a></div>
+				<div><a href='javascript:void(0)' id="sougouImg" onclick="update('sg')" class="btn btn-default" rel='nofollow'>搜狗图床</a></div>
+				<div><a href='javascript:void(0)' id="soImg" onclick="update('c58')" class="btn btn-default" rel='nofollow'>58 图床</a></div>
+				<div><a href='javascript:void(0)' id="soImg" onclick="update('wy')" class="btn btn-default" rel='nofollow'>网易图床</a></div>
+				<div><a href='javascript:void(0)' id="soImg" onclick="update('tt')" class="btn btn-default" rel='nofollow'>头条图床(x)</a></div>
+				<div><a href='javascript:void(0)' id="soImg" onclick="update('qq')" class="btn btn-default" rel='nofollow'>QQ 图床</a></div>
+				<div><a href='javascript:void(0)' id="soImg" onclick="update('kefu')" class="btn btn-default" rel='nofollow'>KF 图床</a></div>
+				<div><a href='javascript:void(0)' id="soImg" onclick="update('sh')" class="btn btn-default" rel='nofollow'>搜狐图床</a></div>
+				<div><a href='javascript:void(0)' id="soImg" onclick="update('hl')" class="btn btn-default" rel='nofollow'>葫芦侠图床</a></div>
+				<div><a href='javascript:void(0)' id="qihoo" onclick="update('qihoo')" class="btn btn-default" rel='nofollow'>360 图床</a></div>
+				<div><a href='javascript:void(0)' id="catbox" onclick="update('catbox')" class="btn btn-default" rel='nofollow'>猫盒图床</a></div>
+				<div><a href='javascript:void(0)' id="vxichina" onclick="update('vxichina')" class="btn btn-default" rel='nofollow'>微聊图床</a></div>
+				<div><a href='javascript:void(0)' id="muke" onclick="update('muke')" class="btn btn-default" rel='nofollow'>慕课图床</a></div>
+				<div><a href='javascript:void(0)' id="gtimg" onclick="update('gtimg')" class="btn btn-default" rel='nofollow'>极图图床</a></div>
+				<input type="file" id="image" name="image" onchange="sc($('#imgType').attr('imgType'));" style="display:none" accept="image/*">
+			</form>
+			<div class="imgContent" id="imgContent">
+				<div id="images"></div>
+				<div id="imgurl">
+					<code>ImgUrl:</code>
+					<input onclick="oCopy(this)" value=""  id="Imgs_url">
+					<code>HtmlUrl:</code>
+					<input onclick="oCopy(this)" value=""  id="Imgs_html">
+					<code>Ubb:</code>
+					<input onclick="oCopy(this)" value=""  id="Imgs_Ubb">
+					<code>Markdown:</code>
+					<input onclick="oCopy(this)" value=""  id="Imgs_markdown">
+				</div>
+			</div>
+
+		</div>
+	</div>
+		<div id="footer" style="position:fixed;width: 100%;text-align: center;bottom: 0px;display: block;">
+		<div style="height: 20px">
+		<p style="color:#000;">您的IP:
+		<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+		<script>document.write(returnCitySN["cname"])</script>  
+		© 
+		<a style="text-decoration:none;" href="https://www.kuyuanba.com">酷源网丨www.kuyuanba.com | </a>更多：<a style="text-decoration:none;" href="https://WWW.4K8.CC">地址发布页</a>
+		</p>
+		</div>
+		</div>
+</body>
+<script type="text/javascript">
+ function update(type){
+ 	$('#image').val('');
+ 	$('#imgType').attr({
+ 		imgType: type,
+ 	});
+ 	image.click();
+ }
+ function sc(type){
+ 	if(!type){return false;}
+ 	var animateimg = $("#image").val();
+ 	$('#pg').val('0');
+ 	var imgarr=animateimg.split('\\');
+ 	var myimg=imgarr[imgarr.length-1];
+ 	var houzui = myimg.lastIndexOf('.');
+ 	var ext = myimg.substring(houzui, myimg.length).toUpperCase();  
+ 	var file = $('#image').get(0).files[0];
+ 	if(!file){return false;}
+ 	var fileSize = file.size;
+ 	switch(type){
+ 		case 'jd':
+ 		var maxSize = 10485760;
+ 		break;
+ 		case 'ali':
+ 		var maxSize = 5242880; 
+ 		break;
+ 		default:
+ 		var maxSize = 5242880; 
+ 	} 
+ 	if(ext !='.PNG' && ext !='.GIF' && ext !='.JPG' && ext !='.JPEG' && ext !='.BMP'&& ext !='.ICO'){  
+ 		parent.alert('文件类型错误,请上传图片类型');return false;  
+ 	}else if(parseInt(fileSize) >= parseInt(maxSize)){  
+ 		parent.alert('上传的文件不能超过'+maxSize/1024/1024+'MB');return false;  
+ 	}else{
+ 		$('#imgLoading').attr('src','https://pic.rmb.bdstatic.com/bjh/38ccca28acf33985abeb85d5085ad238.jpeg');
+ 		var data = new FormData($('#form1')[0]);  
+ //		var YoungxjApisToken = 'f07b711396f9a05bc7129c4507fb65c5';
+ 		switch(type){
+ 			case 'jd': case 'ali': case 'sg': case 'c58': case 'wy': case 'tt': case 'qq': case 'kefu': case 'sh': case 'hl':
+ 			var apiUrl = 'https://image.kieng.cn/upload.html?type='+type;
+ 			break;
+			case 'muke': case 'gtimg': case 'catbox': case 'vxichina': case 'qihoo':
+ 			var apiUrl = 'https://www.hualigs.cn/api/upload?token=8ff730a4dc52360c26854111c794742b&apiType='+type; 
+ 			break;
+ 			default:
+ 			return false;
+ 		};
+ 		$('#progress').show();
+ 		$.ajax({
+ 			url: apiUrl,   
+ 			type: 'POST',    
+ 			data: data,    
+ 			dataType: 'JSON', 
+ 			processData: false,    
+ 			contentType: false,
+ 			xhr: function(){
+ 				var xhr = $.ajaxSettings.xhr();
+ 				if(onprogress && xhr.upload) {
+ 					xhr.upload.addEventListener("progress" , onprogress, false);
+ 					return xhr;
+ 				}
+ 			}
+ 		}).done(function(ret){
+ 			if(ret['code']=='1'||"200"){
+ 				var img = '';var imgurl = '';
+ 				if(type =='muke'){var imgSrc = ret['data']['url']['muke'];}else if(type =='vxichina'){var imgSrc = ret['data']['url']['vxichina'];}else if(type =='qihoo'){var imgSrc = ret['data']['url']['qihoo'];}else if(type =='catbox'){var imgSrc = ret['data']['url']['catbox'];}else if(type =='gtimg'){var imgSrc = ret['data']['url']['gtimg'];}else{var imgSrc = ret['data']['url'];}
+ 				img += '<img referrer="no-referrer" src="'+imgSrc+'" name="img" id="img">';
+ 				$('#Imgs_url').val(imgSrc);
+ 				$('#Imgs_html').val('<img src="'+imgSrc+'"/>');
+ 				$('#Imgs_Ubb').val('[img]'+imgSrc+'[/img]');
+ 				$('#Imgs_markdown').val('![]('+imgSrc+')');
+ 				$('#images').html(img);$('#imgLoading').attr('src','https://pic.rmb.bdstatic.com/bjh/0916c097e27c75cbb5634bda50f1b28f.jpeg');
+ 				$('#imgurl').show();
+ 				$('#progress').hide();  
+ 			}else{
+ 				$('#progress').hide();
+ 				$('#imgLoading').attr('src','https://pic.rmb.bdstatic.com/bjh/43302287722fe29617e85715bb793793.jpeg');
+ 				parent.alert(ret['msg']);
+ 			}  
+ 		});
+ 		return false;  
+ 	}    
+ }
+ function onprogress(evt){
+ 	var loaded = evt.loaded;
+ 	var tot = evt.total;
+ 	var per = Math.floor(100*loaded/tot);
+ 	$('#pg').val(per);
+ }
+ function oCopy(obj){
+ 	obj.select();
+ 	document.execCommand("Copy");
+ 	if (browserRedirect()) {alert('设备类型为手机，有一定几率复制失败！请查看剪切板是否成功复制');}
+ }
+ function browserRedirect(){
+ 	var sUserAgent = navigator.userAgent.toLowerCase();
+ 	var bIsIpad = sUserAgent.match(/ipad/i) == 'ipad';
+ 	var bIsIphone = sUserAgent.match(/iphone os/i) == 'iphone os';
+ 	var bIsMidp = sUserAgent.match(/midp/i) == 'midp';
+ 	var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == 'rv:1.2.3.4';
+ 	var bIsUc = sUserAgent.match(/ucweb/i) == 'web';
+ 	var bIsCE = sUserAgent.match(/windows ce/i) == 'windows ce';
+ 	var bIsWM = sUserAgent.match(/windows mobile/i) == 'windows mobile';
+ 	var bIsAndroid = sUserAgent.match(/android/i) == 'android';
+ 	if(bIsIpad || bIsIphone || bIsMidp || bIsUc7 || bIsUc || bIsCE || bIsWM || bIsAndroid ){
+ 		return 1;
+ 	}
+ };
+ $(document).ready(function(){
+ 	$('#imgLoading').click(function() {$("#imgContent").toggle();});
+ });
+</script>
+</html>
